@@ -8,7 +8,6 @@ public class ejercicio3 {
         todos los subdirectorios y si éstos contienen subdirectorios también...y así sucesivamente hasta
         mostrar todo el contenido de dicho directorio.*/
 
-        System.out.println("Hola");
 
 
     }
