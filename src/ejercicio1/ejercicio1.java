@@ -26,9 +26,12 @@ es un ejecutable, si está oculto, la ruta relativa, la ruta absoluta y el tama�
 
     public static void fileInfo(File file) {
 
-        System.out.printf(" - Ruta relativa: %s\n - Ruta absoluta: %s\n - Nombre del " +
+        System.out.printf(" - Ruta relativa: %s\n " +
+                        "- Ruta absoluta: %s\n - Nombre del " +
                 "archivo: %s\n - ¿Es un ejecutable? %s\n - " +
-                "¿Está oculto? %s\n - Tamaño: %d\n", file.getPath(), file.getAbsolutePath(), file.getName(), file.canExecute() ? "Sí":"No",
+                "¿Está oculto? %s\n - Tamaño: %d\n",
+                file.getPath(), file.getAbsolutePath(),
+                file.getName(), file.canExecute() ? "Sí":"No",
                 file.isHidden() ? "Si" : "No", file.length());
 
 

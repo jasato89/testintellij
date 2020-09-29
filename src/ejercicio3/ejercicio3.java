@@ -21,7 +21,7 @@ public class ejercicio3 {
 
         String input;
 
-        System.out.println("Introduce la ruta del directorio");
+        /*System.out.println("Introduce la ruta del directorio");
 
         input = scanner.nextLine();
 
@@ -34,7 +34,7 @@ public class ejercicio3 {
                     "", x.toFile().isFile() ? "Documento":"Carpeta", x.getFileName(), x));
         } else {
             System.out.println("No es un directorio válido");
-        }
+        }*/
 
     // METHOD RECURSIVE
 
@@ -48,6 +48,13 @@ public class ejercicio3 {
 
         File[] list = newFolder.listFiles();
 
+
+        if(newFolder.isDirectory()) {
+            System.out.printf("Tipo de documento: %s\n " +
+                    "Nombre del archivo: %s\n Ruta del archivo: %s\n\n" +
+                    "", newFolder.isFile() ? "Documento":"Carpeta", newFolder.getName(), newFolder.getPath());
+        }
+        
         for (File f : list) {
             printIt(f);
         }
@@ -58,10 +65,13 @@ public class ejercicio3 {
 
         private static void printIt (File file) {
 
+
         if (file.isDirectory()) {
-            for (File f2 : file.listFiles()) {
-                printIt(f2);
-            }
+
+                for (File f2 : file.listFiles()) {
+                    printIt(f2);
+                }
+
         }else {
             System.out.printf("Tipo de documento: %s\n " +
                     "Nombre del archivo: %s\n Ruta del archivo: %s\n\n" +
