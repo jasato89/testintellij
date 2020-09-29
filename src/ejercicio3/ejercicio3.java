@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.Arrays;
 import java.util.Scanner;
 import java.util.stream.Stream;
 
@@ -43,9 +44,7 @@ public class ejercicio3 {
         System.out.println("Introduce otra ruta:");
 
         String input2 = scanner.nextLine();
-
         File newFolder = new File(input2);
-
         File[] list = newFolder.listFiles();
 
 
@@ -54,13 +53,8 @@ public class ejercicio3 {
                     "Nombre del archivo: %s\n Ruta del archivo: %s\n\n" +
                     "", newFolder.isFile() ? "Documento":"Carpeta", newFolder.getName(), newFolder.getPath());
         }
-        
-        for (File f : list) {
-            printIt(f);
-        }
 
-
-
+        Arrays.stream(list).forEach(f -> printIt(f));
         }
 
         private static void printIt (File file) {
